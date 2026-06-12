@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bill of Materials — AUC × MIT Robotics Workshop</title>
+  <meta name="description" content="Per-station bill of materials for the AUC × MIT LeRobot robotics workshop, with the cheapest verified quotes from Amazon and AliExpress." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <div class="logos">
+      <img class="auc" src="/img/auc.svg" alt="The American University in Cairo" />
+      <span class="x">×</span>
+      <img class="mit" src="/img/mit.svg" alt="Massachusetts Institute of Technology" />
+    </div>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+  </div>
+</header>
+
+<section class="bom-hero">
+  <div class="wrap">
+    <h1>Bill of materials</h1>
+    <p>
+      Everything needed for one workshop station (one team). Prices are the cheapest
+      credible quotes found on Amazon or AliExpress, verified live on product pages
+      on June&nbsp;12,&nbsp;2026. Prices and stock change quickly — re-check before ordering.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="bom-table-wrap">
+      <table class="bom">
+        <thead>
+          <tr>
+            <th>Part</th>
+            <th>Store</th>
+            <th>Qty</th>
+            <th>Unit price</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="https://www.aliexpress.com/item/1005008883199466.html">SO-ARM101 Kit Pro (leader + follower)</a>
+              <span class="spec">Seeed Studio official store · servo motor kit, without 3D-printed parts</span>
+            </td>
+            <td><span class="store ali">AliExpress</span></td>
+            <td>1</td>
+            <td class="price">$279.80</td>
+            <td>+ ~$43.74 shipping. Same listing sells the 3D-printed parts set for $37.66
+              (or print on campus). Amazon alternative with Prime shipping:
+              <a href="https://www.amazon.com/dp/B0FH8CPXP7">$360.00</a>.</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://www.amazon.com/dp/B0GWHS9PVY">Orange Pi 5 — 8&nbsp;GB</a>
+              <span class="spec">RK3588S 8-core, 6-TOPS NPU, board only</span>
+            </td>
+            <td><span class="store amazon">Amazon</span></td>
+            <td>1</td>
+            <td class="price">$183.99</td>
+            <td>A <a href="https://www.amazon.com/dp/B0BN17BRYY">board + 5V/4A power-supply bundle</a>
+              is $195.99 — better value if you're buying the PSU anyway. AliExpress was
+              not cheaper (~$238 + shipping).</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://www.amazon.com/dp/B0G2SHDXJV">Stereo USB webcam module</a>
+              <span class="spec">Waveshare OS02G10 · 2&nbsp;MP dual-lens, synchronized same-frame output, USB&nbsp;2.0</span>
+            </td>
+            <td><span class="store amazon">Amazon</span></td>
+            <td>1</td>
+            <td class="price">$66.99</td>
+            <td>Cheapest credible synchronized stereo module found. ELP synchronized
+              alternatives run <a href="https://www.amazon.com/dp/B078TDLHCP">$81.99</a>–$84.</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://www.amazon.com/dp/B09JBBHVTY">Intel RealSense D405</a>
+              <span class="spec">Short-range stereo depth camera, USB&nbsp;3.2 Gen&nbsp;1</span>
+            </td>
+            <td><span class="store amazon">Amazon</span></td>
+            <td>1</td>
+            <td class="price">$419.99</td>
+            <td>Cheapest on Amazon/AliExpress (AliExpress starts at ~$481). The official
+              <a href="https://store.realsenseai.com">RealSense store</a> sells it for
+              $272.00 — worth ordering there instead if direct purchasing is allowed.</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://www.amazon.com/dp/B00M55C1I2">MicroSD card — 64&nbsp;GB</a>
+              <span class="spec">SanDisk Ultra microSDXC UHS-I with adapter (Orange Pi boot disk)</span>
+            </td>
+            <td><span class="store amazon">Amazon</span></td>
+            <td>1</td>
+            <td class="price">$23.00</td>
+            <td>The <a href="https://www.amazon.com/dp/B0G8KLQ64L">current-gen 145&nbsp;MB/s SKU</a>
+              is $23.99 — worth the extra dollar.</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://www.amazon.com/dp/B0C2TGVR4Z">USB-C power supply — 5&nbsp;V / 4&nbsp;A</a>
+              <span class="spec">eleUniverse 20&nbsp;W fixed-output, UL listed</span>
+            </td>
+            <td><span class="store amazon">Amazon</span></td>
+            <td>1</td>
+            <td class="price">$9.99</td>
+            <td>The Orange Pi 5 needs a true fixed 5&nbsp;V/4&nbsp;A supply — standard USB-C&nbsp;PD
+              phone chargers will <em>not</em> work. Skip if buying the board+PSU bundle above.</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Per-station total (excl. shipping)</td>
+            <td class="price">$983.76</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <p class="bom-note">
+      <strong>Building arms from raw servos instead?</strong> Feetech STS3215 bus servos run
+      <a href="https://www.aliexpress.com/item/1005008284773473.html">~$12.24/pc on AliExpress</a>
+      (12 needed per leader–follower pair, ≈$147 + shipping) — but note the SO-101 leader arm
+      requires specific 7.4&nbsp;V gear-ratio variants (C044/C046/C001 mix), not 12 identical 12&nbsp;V
+      units. A <a href="https://www.aliexpress.us/item/3256809795555647.html">LeRobot-specific
+      multi-ratio listing</a> exists at ~$16.46/pc. Verify gear ratios on arrival.
+    </p>
+    <p class="bom-note">
+      AliExpress search results often show 4-month installment amounts or new-shopper promo
+      prices; all prices above are regular product-page prices.
+    </p>
+    <a class="back-link" href="/">← Back to the workshop</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fine">
+      <span>AUC × MIT Robotics Workshop — bill of materials, last verified June 12, 2026.</span>
+      <a href="/">Home</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
