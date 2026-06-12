@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AUC × MIT Robotics Workshop — LeRobot in Cairo</title>
+  <meta name="description" content="A hands-on robotics workshop at The American University in Cairo, taught by students from MIT. Build and train real robot policies with LeRobot, Orange Pi 5, and stereo vision." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <div class="logos">
+      <img class="auc" src="/img/auc.svg" alt="The American University in Cairo" />
+      <span class="x">×</span>
+      <img class="mit" src="/img/mit.svg" alt="Massachusetts Institute of Technology" />
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#program">Program</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">AUC × MIT Educational Partnership</span>
+    <h1>Hands-on robot learning, taught in Cairo.</h1>
+    <p class="lede">
+      Students from MIT travel to The American University in Cairo to lead an intensive
+      robotics workshop. Participants build, teleoperate, and train real robot arms using
+      Hugging&nbsp;Face's LeRobot — running on Orange&nbsp;Pi&nbsp;5 boards with stereo camera vision.
+    </p>
+    <a class="btn" href="#about">Learn more</a>
+    <div class="meta">
+      <span><strong>Where</strong> · AUC New Cairo campus</span>
+      <span><strong>Who</strong> · AUC undergraduates, all majors welcome</span>
+      <span><strong>Taught by</strong> · MIT student instructors</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">About the workshop</div>
+      <h2>From zero to a trained robot policy in one week</h2>
+      <p>
+        This is a small, hands-on education program — not a lecture series. Working in small
+        teams with MIT instructors, participants take a robot arm from unboxing to a learned
+        manipulation policy trained on data they collect themselves.
+      </p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Build &amp; teleoperate</h3>
+        <p>Assemble and calibrate leader–follower robot arms, then drive them by hand to get a
+        feel for kinematics, control loops, and the joys of real hardware.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Collect demonstrations</h3>
+        <p>Record teleoperated demonstrations with synchronized stereo camera streams —
+        the dataset that your robot will learn from.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Train &amp; deploy</h3>
+        <p>Train imitation-learning policies with LeRobot and deploy them back onto the arm.
+        Watch a robot do the task on its own, using a model you trained.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="curriculum" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Curriculum</div>
+      <h2>Built on LeRobot</h2>
+      <p>
+        The workshop is built around <a href="https://github.com/huggingface/lerobot">LeRobot</a>,
+        Hugging Face's open-source library for real-world robot learning. Everything participants
+        use is open source and inexpensive enough to keep building with after the workshop ends.
+      </p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Imitation learning</h3>
+        <p>How robots learn from human demonstrations: dataset formats, action chunking, and
+        policies like <code>ACT</code> — explained from first principles, then trained for real.</p>
+      </div>
+      <div class="card">
+        <h3>Robot vision</h3>
+        <p>Stereo cameras give the robot depth. Participants work with dual-lens webcam modules
+        and an Intel RealSense depth camera to understand how robots perceive a 3-D workspace.</p>
+      </div>
+      <div class="card">
+        <h3>Edge deployment</h3>
+        <p>Each team's stack runs on an Orange Pi 5 single-board computer — proof that serious
+        robot learning doesn't need a server room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hardware">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hardware</div>
+      <h2>What's on each team's bench</h2>
+      <p>Every station is a complete, self-contained robot-learning rig.</p>
+    </div>
+    <div class="hw">
+      <div class="item">
+        <h3>SO-101 robot arms</h3>
+        <p>A leader–follower pair of open-source 6-DoF arms — the standard LeRobot platform for
+        teleoperation and imitation learning.</p>
+      </div>
+      <div class="item">
+        <h3>Orange Pi 5</h3>
+        <p>An 8-core ARM single-board computer with a 6-TOPS NPU, running the full data-collection
+        and inference stack at the edge.</p>
+      </div>
+      <div class="item">
+        <h3>Stereo webcam modules</h3>
+        <p>Synchronized dual-lens USB cameras provide binocular views of the workspace for
+        policy training.</p>
+      </div>
+      <div class="item">
+        <h3>Intel RealSense D405</h3>
+        <p>A short-range depth camera for high-fidelity close-up perception at the gripper.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="program" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Program</div>
+      <h2>A typical workshop week</h2>
+    </div>
+    <div class="week">
+      <div class="day">
+        <div class="label">Day 1</div>
+        <p>Welcome &amp; setup — meet the MIT instructors, flash the Orange Pis, assemble and
+        calibrate the arms.</p>
+      </div>
+      <div class="day">
+        <div class="label">Day 2</div>
+        <p>Teleoperation — leader–follower control, camera mounting, and stereo calibration.</p>
+      </div>
+      <div class="day">
+        <div class="label">Day 3</div>
+        <p>Data collection — design a manipulation task and record demonstration datasets.</p>
+      </div>
+      <div class="day">
+        <div class="label">Day 4</div>
+        <p>Training — imitation-learning theory, then train policies on the collected data.</p>
+      </div>
+      <div class="day">
+        <div class="label">Day 5</div>
+        <p>Demo day — autonomous policy rollouts, team presentations, and next steps for
+        continuing in robotics at AUC.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div>
+      <h2>Two campuses, one bench.</h2>
+      <p>This partnership brings MIT students and AUC students together around real hardware —
+      and leaves a complete, reusable robotics lab kit behind at AUC.</p>
+    </div>
+    <a class="btn" href="mailto:hisham@starpilot.ai">Get in touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div class="logos-footer">
+        <img src="/img/auc.svg" alt="AUC" />
+        <span class="x">×</span>
+        <img src="/img/mit.svg" alt="MIT" />
+      </div>
+      <div>
+        <a href="https://github.com/huggingface/lerobot">LeRobot</a> ·
+        <a href="https://www.aucegypt.edu">aucegypt.edu</a> ·
+        <a href="https://www.mit.edu">mit.edu</a>
+      </div>
+    </div>
+    <div class="fine">
+      <span>AUC × MIT Robotics Workshop — a student-led educational collaboration.
+      University marks belong to their respective institutions.</span>
+      <a href="/bom">Bill of materials</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
