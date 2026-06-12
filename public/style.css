@@ -224,6 +224,9 @@ footer .fine {
   color: #7e93a9;
 }
 footer .fine a { color: #9fb3c8; }
+footer .bom-link-row { text-align: center; margin-top: 18px; font-size: 13px; }
+footer .bom-link-row a { color: #9fb3c8; }
+footer .bom-link-row a:hover { color: #fff; }
 
 /* ---- BOM page ---- */
 .bom-hero {
@@ -271,6 +274,7 @@ table.bom .store {
 }
 table.bom .store.amazon { background: #fef3e2; color: #8a5a00; }
 table.bom .store.ali { background: #ffe9e6; color: #b3331d; }
+table.bom .store.digikey { background: #fde8ec; color: #a4123f; }
 table.bom tfoot td {
   font-weight: 700;
   background: #f4f2ec;
