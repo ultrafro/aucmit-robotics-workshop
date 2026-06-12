@@ -23,6 +23,7 @@
       <a href="#about">About</a>
       <a href="#curriculum">Curriculum</a>
       <a href="#hardware">Hardware</a>
+      <a href="#system">System</a>
       <a href="#program">Program</a>
     </nav>
   </div>
@@ -142,7 +143,118 @@
   </div>
 </section>
 
-<section id="program" class="alt">
+<section id="system" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">System diagram</div>
+      <h2>How the parts become a robot</h2>
+      <p>
+        Every part on the bench plays one role. You drive the leader arm by hand; the Orange Pi
+        mirrors your motion onto the follower arm while the cameras watch. Those recordings become
+        the dataset a policy is trained on — and then the same loop runs without you.
+      </p>
+    </div>
+    <div class="arch">
+      <svg viewBox="0 0 1100 600" role="img" aria-label="System diagram: leader arm and cameras feed the Orange Pi 5, which drives the follower arm; below, the learning loop from teleoperation to autonomous deployment.">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0L10 5L0 10z" fill="#0d3960"/>
+          </marker>
+          <marker id="arrRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0L10 5L0 10z" fill="#750014"/>
+          </marker>
+        </defs>
+
+        <!-- cameras -->
+        <rect x="235" y="40" width="240" height="104" rx="10" fill="#fff" stroke="#0d3960" stroke-width="1.5"/>
+        <text x="355" y="78" text-anchor="middle" font-size="17" font-weight="700" fill="#0d3960">Stereo webcam</text>
+        <text x="355" y="100" text-anchor="middle" font-size="12.5" fill="#5b6678">two synced lenses</text>
+        <text x="355" y="118" text-anchor="middle" font-size="12.5" fill="#5b6678">wide view of the workspace</text>
+
+        <rect x="625" y="40" width="240" height="104" rx="10" fill="#fff" stroke="#0d3960" stroke-width="1.5"/>
+        <text x="745" y="78" text-anchor="middle" font-size="17" font-weight="700" fill="#0d3960">RealSense D405</text>
+        <text x="745" y="100" text-anchor="middle" font-size="12.5" fill="#5b6678">short-range depth camera</text>
+        <text x="745" y="118" text-anchor="middle" font-size="12.5" fill="#5b6678">close-up of the gripper</text>
+
+        <!-- arms -->
+        <rect x="40" y="255" width="215" height="130" rx="10" fill="#fff" stroke="#750014" stroke-width="1.5"/>
+        <text x="147" y="298" text-anchor="middle" font-size="17" font-weight="700" fill="#750014">Leader arm</text>
+        <text x="147" y="320" text-anchor="middle" font-size="12.5" fill="#5b6678">SO-101 · no motors driven</text>
+        <text x="147" y="338" text-anchor="middle" font-size="12.5" fill="#5b6678">you move it by hand</text>
+
+        <rect x="845" y="255" width="215" height="130" rx="10" fill="#fff" stroke="#750014" stroke-width="1.5"/>
+        <text x="952" y="298" text-anchor="middle" font-size="17" font-weight="700" fill="#750014">Follower arm</text>
+        <text x="952" y="320" text-anchor="middle" font-size="12.5" fill="#5b6678">SO-101 · 6 servos</text>
+        <text x="952" y="338" text-anchor="middle" font-size="12.5" fill="#5b6678">does the actual task</text>
+
+        <!-- orange pi -->
+        <rect x="425" y="240" width="250" height="160" rx="12" fill="#0d3960"/>
+        <text x="550" y="282" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">Orange Pi 5</text>
+        <text x="550" y="305" text-anchor="middle" font-size="13" fill="#c9d6e4">runs LeRobot</text>
+        <line x1="455" y1="322" x2="645" y2="322" stroke="#3a5d80" stroke-width="1"/>
+        <text x="550" y="347" text-anchor="middle" font-size="12" fill="#9fb3c8">microSD — OS + recorded datasets</text>
+        <text x="550" y="369" text-anchor="middle" font-size="12" fill="#9fb3c8">8-core ARM · 6-TOPS NPU</text>
+
+        <!-- camera feeds -->
+        <line x1="355" y1="144" x2="488" y2="236" stroke="#0d3960" stroke-width="1.5" marker-end="url(#arr)"/>
+        <text x="398" y="198" text-anchor="end" font-size="12" fill="#5b6678">USB 2.0 · synced frames</text>
+        <line x1="745" y1="144" x2="612" y2="236" stroke="#0d3960" stroke-width="1.5" marker-end="url(#arr)"/>
+        <text x="702" y="198" text-anchor="start" font-size="12" fill="#5b6678">USB 3.2 · RGB + depth</text>
+
+        <!-- d405 rides the wrist -->
+        <path d="M 865 92 C 1000 100 1010 180 953 252" fill="none" stroke="#750014" stroke-width="1.2" stroke-dasharray="5 5" marker-end="url(#arrRed)"/>
+        <text x="1010" y="160" text-anchor="middle" font-size="12" fill="#750014">mounted at the gripper</text>
+
+        <!-- teleop in, commands out -->
+        <line x1="255" y1="320" x2="421" y2="320" stroke="#0d3960" stroke-width="1.5" marker-end="url(#arr)"/>
+        <text x="338" y="306" text-anchor="middle" font-size="12" fill="#5b6678">joint positions</text>
+        <text x="338" y="345" text-anchor="middle" font-size="12" fill="#5b6678">serial bus</text>
+        <line x1="675" y1="320" x2="841" y2="320" stroke="#0d3960" stroke-width="1.5" marker-end="url(#arr)"/>
+        <text x="758" y="306" text-anchor="middle" font-size="12" fill="#5b6678">motor commands</text>
+        <text x="758" y="345" text-anchor="middle" font-size="12" fill="#5b6678">serial bus</text>
+
+        <!-- power -->
+        <rect x="40" y="470" width="215" height="80" rx="10" fill="#fff" stroke="#0d3960" stroke-width="1.5"/>
+        <text x="147" y="503" text-anchor="middle" font-size="15" font-weight="700" fill="#0d3960">USB-C power supply</text>
+        <text x="147" y="525" text-anchor="middle" font-size="12.5" fill="#5b6678">fixed 5 V / 4 A — not PD</text>
+        <line x1="255" y1="505" x2="452" y2="398" stroke="#0d3960" stroke-width="1.5" marker-end="url(#arr)"/>
+        <text x="330" y="438" text-anchor="middle" font-size="12" fill="#5b6678">5 V / 4 A</text>
+
+        <!-- learning loop -->
+        <text x="690" y="464" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="2" fill="#750014">THE LEARNING LOOP</text>
+        <line x1="550" y1="400" x2="588" y2="476" stroke="#0d3960" stroke-width="1.2" stroke-dasharray="5 5" marker-end="url(#arr)"/>
+
+        <rect x="330" y="480" width="150" height="58" rx="29" fill="#fbfaf7" stroke="#e6e2d8"/>
+        <text x="405" y="504" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2230">1 · Teleoperate</text>
+        <text x="405" y="523" text-anchor="middle" font-size="11" fill="#5b6678">you drive the leader</text>
+
+        <rect x="520" y="480" width="150" height="58" rx="29" fill="#fbfaf7" stroke="#e6e2d8"/>
+        <text x="595" y="504" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2230">2 · Record</text>
+        <text x="595" y="523" text-anchor="middle" font-size="11" fill="#5b6678">frames + joints → dataset</text>
+
+        <rect x="710" y="480" width="150" height="58" rx="29" fill="#fbfaf7" stroke="#e6e2d8"/>
+        <text x="785" y="504" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2230">3 · Train</text>
+        <text x="785" y="523" text-anchor="middle" font-size="11" fill="#5b6678">ACT policy on demos</text>
+
+        <rect x="900" y="480" width="150" height="58" rx="29" fill="#fbfaf7" stroke="#e6e2d8"/>
+        <text x="975" y="504" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2230">4 · Deploy</text>
+        <text x="975" y="523" text-anchor="middle" font-size="11" fill="#5b6678">follower runs it solo</text>
+
+        <line x1="484" y1="509" x2="516" y2="509" stroke="#0d3960" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="674" y1="509" x2="706" y2="509" stroke="#0d3960" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="864" y1="509" x2="896" y2="509" stroke="#0d3960" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="975" y1="477" x2="955" y2="392" stroke="#750014" stroke-width="1.5" marker-end="url(#arrRed)"/>
+      </svg>
+    </div>
+    <p class="arch-caption">
+      During teleoperation the policy is you; after training, the same camera streams and the
+      same serial bus carry the policy's decisions instead. Nothing about the hardware changes
+      between learning and autonomy.
+    </p>
+  </div>
+</section>
+
+<section id="program">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Program</div>
